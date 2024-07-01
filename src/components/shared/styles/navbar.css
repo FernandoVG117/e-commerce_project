@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid #b4b4b4b4;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px 20px;
+    gap: 5px;
+    background-color: #f6f6f6;
+}
+.navbar__title {
+    max-width: 150px;
+}
+.navbar__list {
+    display: flex;
+    gap: 20px;
+    height: inherit;
+}
+
+
+@media (width < 426px) {
+    .navbar {
+        padding: 5px 5px;
+
+        justify-content: space-around;
+    }
+    .navbar__title {
+        max-width: 150px;
+    }
+}

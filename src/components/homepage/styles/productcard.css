@@ -1,0 +1,35 @@
+.productcard {
+    width: 200px;
+    height: 300px;
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productcard__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #a5a5a59e;
+}
+
+.productcard__btns {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+.productcard__img {
+    padding: 5px;
+    width: 180px;
+}
+.productcard__img img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+.productcard__list {
+    height: 80px;
+}
