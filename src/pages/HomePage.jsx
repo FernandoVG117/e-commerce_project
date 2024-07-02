@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductsThunk } from '../store/slices/products.slice';
 import ProductCard from '../components/homepage/ProductCard';
-import './styles/homepage.css';
 import FilterPrice from '../components/homepage/FilterPrice';
 import FilterSelect from '../components/homepage/FilterSelect';
+import './styles/homepage.css';
 
 const HomePage = () => {
 
@@ -39,11 +39,11 @@ const HomePage = () => {
     <div className='homepage'>
       
       <div className='homepage__filters'>
-        <div className='homepage__filter-price'>
+        <aside className='homepage__filter-price'>
           <FilterPrice 
             setInputPrice={setInputPrice}
           />
-        </div>
+        </aside>
         <div className='homepage__filter-selector'>
           <FilterSelect
             setCategoryValue={setCategoryValue}

@@ -15,17 +15,19 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/product/:id' element={<ProductInfo />} />
-        <Route element={<ProtectedRoutes />}>
-          <Route path='/cart' element={<CartPage />} />
-          <Route path='/purchases' element={<Purchases />} />
-        </Route>
-        <Route path='*' element={<h2>This route doesn't exist.</h2>} />
-      </Routes>
+      <div className='content'>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/product/:id' element={<ProductInfo />} />
+          <Route element={<ProtectedRoutes />}>
+            <Route path='/cart' element={<CartPage />} />
+            <Route path='/purchases' element={<Purchases />} />
+          </Route>
+          <Route path='*' element={<h2>This route doesn't exist.</h2>} />
+        </Routes>
+      </div>
     </div>
   )
 }

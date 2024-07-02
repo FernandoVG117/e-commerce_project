@@ -39,7 +39,7 @@
         flex-direction: column;
     }
     .homepage__filters {
-        display: none;
+        /* display: none; */
     }
 }
 
