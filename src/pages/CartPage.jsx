@@ -9,30 +9,32 @@ import { postPurchases } from '../store/slices/purchases.slice';
 const CartPage = () => {
 
   const cart = useSelector((store) => store.cartSlice);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCartProdsThunk())
   }, [])
   
-  const products = cart.reduce(
-    (cv, prod) => cv += prod?.quantity, 0
-  );
+  const products = cart.reduce((cv, prod) => {
+    if (prod && prod.quantity) {
+      return cv + prod.quantity;
+    }
+    return cv;
+  }, 0);
 
-  const total = cart.reduce(
-    (cv, prod) => cv += prod?.quantity * prod?.product.price, 0
-  );
+  const total = cart.reduce((cv, prod) => {
+    if (prod && prod.product && prod.quantity) {
+      return cv + (prod.quantity * prod.product.price);
+    }
+    return cv;
+  }, 0);
 
   const handleBuy = () => {
     dispatch(postPurchases());
     dispatch(setCart([]));
   }
 
-
-
-  console.log(cart)
-
+  // console.log(cart)
 
   return (
     <div className='cartpage'>
