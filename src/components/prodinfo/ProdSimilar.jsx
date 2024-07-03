@@ -8,16 +8,18 @@ const ProdSimilar = ({ product }) => {
   const [items, getItems] = useFetch();
 
   useEffect(() => {
-    const path = `products?categoryId=${product?.categoryId}`;
-    getItems(path);
-  }, [])
+    if (product?.categoryId) {
+      const path = `products?categoryId=${product.categoryId}`;
+      getItems(path);
+    }
+  }, [product?.categoryId]);
   
   const cbFilter = (prod) => {
     return prod.id !== product.id
   }
   
   
-  console.log(items)
+  // console.log(items)
 
   return (
     <div className='prodsimilar'>
