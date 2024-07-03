@@ -27,7 +27,9 @@
     display: none;
 }
 
-
+/* .homepage__filters > .homepage__btn-x {
+    display: none;
+} */
 
 .homepage__container {
     display: flex;
@@ -65,12 +67,12 @@
         visibility: hidden;
     }
     .homepage__filters {
-        background-color: gainsboro;
+        background-color: #f0f0f0;
+        justify-content: space-evenly;
         border-radius: 25px;
         left: -100%;
         transition: left 0.5s;
-        /* left: -100% */
-        /* display: none; */
+        height: 300px;
     }
     .homepage__filters.active {
         left: 0;

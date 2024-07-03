@@ -68,7 +68,7 @@ const HomePage = () => {
             className='homepage__input'
           />
           <button>🔍</button>  
-          <button onClick={handleMenu}>Menu</button>
+          <button onClick={handleMenu} className={`homepage__btn-x`}>Menu</button>
         </div>
         {
           products?.filter(callbackFilter).map((product) => (
