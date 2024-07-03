@@ -1,7 +1,7 @@
 import React from 'react';
-import './styles/itemcard.css';
 import { deleteProductsThunk, updateProductsThunk } from '../../store/slices/cart.slice';
 import { useDispatch } from 'react-redux';
+import './styles/itemcard.css';
 
 const ItemCart = ({prod}) => {
 
@@ -36,11 +36,11 @@ const ItemCart = ({prod}) => {
             <img src={prod.product?.images[0].url} alt={`image-${prod?.product?.images[0].id}`} />
         </figure>
         <div className='itemcard__buttons'>
-            <button onClick={handleLess} className='itemcard__'>-</button>
-            <span className='itemcard__'>{prod.quantity}</span>
-            <button onClick={hanldePlus} className='itemcard__'>+</button>
+            <button onClick={handleLess} className='itemcard__btn'>-</button>
+            <span className='itemcard__span'>{prod.quantity}</span>
+            <button onClick={hanldePlus} className='itemcard__btn'>+</button>
         </div>
-        <button className='itemcard__btn-delete' onClick={handleDelete}>delete</button>
+        <button className='itemcard__btn-delete' onClick={handleDelete}>Delete</button>
         <p className='itemcard__total'>Total: $
             <span className='itemcard__'>{prod.product?.price * prod.quantity}</span>
         </p>

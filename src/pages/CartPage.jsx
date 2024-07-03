@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {getCartProdsThunk, setCart} from '../store/slices/cart.slice'
 import ItemCart from '../components/cartpage/ItemCart';
-import './styles/cartpage.css';
 import { postPurchases } from '../store/slices/purchases.slice';
+import './styles/cartpage.css';
 
 
 const CartPage = () => {
