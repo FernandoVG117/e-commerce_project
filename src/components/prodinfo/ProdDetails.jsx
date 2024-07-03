@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './styles/proddetails.css'
 import { useDispatch } from 'react-redux';
 import { postProductsThunk } from '../../store/slices/cart.slice';
+import './styles/proddetails.css'
 
 const ProdDetails = ({ product }) => {
 
@@ -58,8 +58,8 @@ const ProdDetails = ({ product }) => {
             </div>
           </div>
           <div className='proddetails__buy-details-buy'>
-            <button onClick={handleAdd}>
-              Buy
+            <button onClick={handleAdd} className='proddetails__cartshop'>
+              <ion-icon name="cart-outline" className="icon-large"></ion-icon>
             </button>
           </div>
         </div>
