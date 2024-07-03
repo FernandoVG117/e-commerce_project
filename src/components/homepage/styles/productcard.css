@@ -1,6 +1,6 @@
 .productcard {
     width: 250px;
-    border: 1px solid;
+    border: 1px solid #a5a5a5cf;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -74,4 +74,10 @@
     gap: 10px;
     padding-bottom: 20px;
     justify-content: space-evenly;
+}
+
+.productcard__btns button {
+    padding: 0.3rem 0.75rem;
+    background-color: #3586ff;
+    color: #fff;
 }
