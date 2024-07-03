@@ -38,6 +38,13 @@ const Login = () => {
               :
           <div className='login__container'>
             <h2 className='login__title'><span>LOGIN</span></h2>
+
+            <div className='login__test'>
+              <span>Test Users</span>
+              <span>email: coco@email.com</span>
+              <span>password: 12345</span>
+            </div>
+
             <form onSubmit={handleSubmit(submit)} className='login__form'>
 
             {/*
@@ -50,7 +57,7 @@ const Login = () => {
                 <input {...register('password')} type="password" id='password' />
               </div>
             */}
-
+            
             <div>
               <label htmlFor="email" className='login__label'>
                 <input type="email" {...register('email')} placeholder=' ' id='email' className='login__input'/>

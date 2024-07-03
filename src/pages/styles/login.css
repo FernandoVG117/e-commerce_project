@@ -16,7 +16,7 @@
     height: 350px;
     border: 1px solid #848484be;
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
 }
 .login__form {
     display: flex;
@@ -90,4 +90,15 @@
 .login__text {
     font-size: 0.85rem;
     text-align: center;
+}
+.login__test {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px;
+    background-color: #5b9dff;
+    border: 1px solid #3586ff;
+    color: #ffffff;
+    font-size: 0.9rem;
+    border-radius: 10px;
 }
