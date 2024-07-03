@@ -36,19 +36,37 @@ const Login = () => {
             handleLogout={handleLogout}
           />
               :
-          <div>
-            <form onSubmit={handleSubmit(submit)}>
-              <div>
+          <div className='login__container'>
+            <h2 className='login__title'><span>LOGIN</span></h2>
+            <form onSubmit={handleSubmit(submit)} className='login__form'>
+
+            {/*
+              <div className='login__email'>
                 <label htmlFor="email">Email</label>
                 <input {...register('email')} type="email" id='email' />
               </div>
-              <div>
+              <div className='login__password'>
                 <label htmlFor="password">Password</label>
                 <input {...register('password')} type="password" id='password' />
               </div>
-              <button>Log in</button>
+            */}
+
+            <div>
+              <label htmlFor="email" className='login__label'>
+                <input type="email" {...register('email')} placeholder=' ' id='email' className='login__input'/>
+                <span className='label__name'>Enter your email here.</span>
+              </label>
+            </div>
+            <div>
+              <label htmlFor="password" className='login__label'>
+                <input type="password" {...register('password')} placeholder=' ' id='password' className='login__input'/>
+                <span className='label__name'>Enter your password here.</span>
+              </label>
+            </div>
+
+              <button className='login__btn'>Log in</button>
             </form>
-            <p>If you are not register yet, please <Link to={'/register'}>register here</Link>.</p>
+            <p className='login__text'>If you are not register yet, please <Link to={'/register'}>register here</Link>.</p>
           </div>
       }
     </div>    
