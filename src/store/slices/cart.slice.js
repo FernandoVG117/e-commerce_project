@@ -32,7 +32,7 @@ export const getCartProdsThunk = () => (dispatch) => {
     axios.get(url, bearerToken())
         .then(res => {
             dispatch(setCart(res.data))
-            console.log(res.data)
+            // console.log(res.data)
         })
         .catch((err) => console.log(err))
 }
@@ -43,7 +43,7 @@ export const getOneProdIdThunk = (id) => (dispatch) => {
     axios.get(url)
         .then(res => {
             dispatch(setCart(res.data))
-            console.log(res.data)
+            // console.log(res.data)
         })
         .catch((err) => console.log(err))
 }
@@ -55,7 +55,7 @@ export const postProductsThunk = (data) => (dispatch) => {
     axios.post(url, data, bearerToken())
         .then(res => {
             dispatch(addCart(res.data));
-            console.log(res.data);
+            // console.log(res.data);
         })
         .catch(err => console.log(err))
 }

@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/proddetails.css'
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { postProductsThunk } from '../../store/slices/cart.slice';
 
 const ProdDetails = ({ product }) => {
 
-  // const store = useSelector((store) => store.products);
+  const [counter, setCounter] = useState(1);
 
-  // console.log(store)
+  const handleLess = () => {
+    if (counter > 1) {
+      return setCounter(counter - 1) ;
+    }
+  }
+
+  const handlePlus = () => {
+    return setCounter(counter + 1) ;
+  }
+
+  // Buy button
+  const dispatch = useDispatch();
+
+  const handleAdd = () => {
+    dispatch(postProductsThunk(
+      {
+        "quantity": counter,
+        "productId": product.id,
+      }
+    ))
+
+  }
+
 
   return (
     <article className='proddetails'>
@@ -23,16 +46,21 @@ const ProdDetails = ({ product }) => {
           <div className="proddetails__buy-details-quantity">
             <span>Quantity</span>
             <div className="proddetails__buy-details-quantity-btns">
-              <button>
+              <button onClick={handleLess}>
                 <ion-icon name="caret-down-outline"></ion-icon>
               </button>
               <span>
-                {}
+                {counter}
               </span>
-              <button>
+              <button onClick={handlePlus}>
                 <ion-icon name="caret-up-outline"></ion-icon>
               </button>
             </div>
+          </div>
+          <div className='proddetails__buy-details-buy'>
+            <button onClick={handleAdd}>
+              Buy
+            </button>
           </div>
         </div>
         <div className='proddetails__details'>

@@ -6,9 +6,12 @@ import FilterPrice from '../components/homepage/FilterPrice';
 import FilterSelect from '../components/homepage/FilterSelect';
 import './styles/homepage.css';
 
+const body = document.querySelector('body');
+
 const HomePage = () => {
 
   const [inputValue, setInputValue] = useState('');
+  const [menu, setMenu] = useState(false);
   const [inputPrice, setInputPrice] = useState({
     min: 0,
     max: Infinity,
@@ -33,22 +36,28 @@ const HomePage = () => {
     return name && price && category;
   }
 
+  const handleMenu = () => {
+    setMenu(!menu)
+  }
+
+  const handleMode = () => {
+    body.classList.toggle('dark');
+  }
+
   // console.log(products)
 
   return (
     <div className='homepage'>
       
-      <div className='homepage__filters'>
-        <aside className='homepage__filter-price'>
-          <FilterPrice 
-            setInputPrice={setInputPrice}
-          />
-        </aside>
-        <div className='homepage__filter-selector'>
-          <FilterSelect
-            setCategoryValue={setCategoryValue}
-          />
-        </div>
+      <div className={`homepage__filters ${menu && 'active'}`}>
+        <button onClick={handleMenu}>X</button>
+        <FilterPrice 
+          setInputPrice={setInputPrice}
+        />
+        <FilterSelect
+          setCategoryValue={setCategoryValue}
+        />
+        <button onClick={handleMode}>Change Mode</button>
       </div>
       <div className='homepage__container'>
         <div className='homepage__search'>
@@ -59,9 +68,7 @@ const HomePage = () => {
             className='homepage__input'
           />
           <button>🔍</button>  
-          <span>
-            <ion-icon name="menu-outline"></ion-icon>
-          </span>
+          <button onClick={handleMenu}>Menu</button>
         </div>
         {
           products?.filter(callbackFilter).map((product) => (

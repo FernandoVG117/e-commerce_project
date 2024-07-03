@@ -1,8 +1,8 @@
 import React from 'react';
-import './styles/productcard.css'
 import { useNavigate } from 'react-router-dom';
 import { postProductsThunk } from '../../store/slices/cart.slice';
 import { useDispatch } from 'react-redux';
+import './styles/productcard.css'
 
 
 const ProductCard = ({product}) => {
@@ -29,6 +29,7 @@ const ProductCard = ({product}) => {
       <div className="productcard__header" onClick={handleDetail}>
         <figure className='productcard__img'>
           <img src={product.images[0].url} alt={``} />
+          <img src={product.images[1].url} alt={``} />
         </figure>
       </div>
       <div className="productcard__body">

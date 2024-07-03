@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import Logout from '../components/logout/Logout';
 import './styles/login.css'
 
 const Login = () => {
@@ -31,7 +32,9 @@ const Login = () => {
     <div className='login'>
       {
         token ? 
-          <button onClick={handleLogout}>Logout</button>
+          <Logout 
+            handleLogout={handleLogout}
+          />
               :
           <div>
             <form onSubmit={handleSubmit(submit)}>

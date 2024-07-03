@@ -14,7 +14,7 @@ const ProductInfo = () => {
   useEffect(() => {
     const path = `/products/${id}`;
     getProduct(path);
-  }, []);
+  }, [id]);
 
 
   // console.log(product)
